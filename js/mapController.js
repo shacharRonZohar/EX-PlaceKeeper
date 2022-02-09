@@ -19,16 +19,22 @@ function initMap() {
         map: map,
     })
     map.addListener('click', (ev) => {
-        const name = prompt('Gib name')
-        const pos = {
-            name,
-            coords: {
-                lat: ev.latLng.lat(),
-                lng: ev.latLng.lng()
-            },
-        }
-        onAddPlace(pos)
-        renderPlaces()
+        const elModal = document.querySelector('.modal')
+        elModal.classList.add('open')
+        elModal.querySelector('.confirm-name').addEventListener('click', () => {
+            elModal.classList.remove('open')
+            const name = elModal.querySelector('input').value
+            const pos = {
+                name,
+                coords: {
+                    lat: ev.latLng.lat(),
+                    lng: ev.latLng.lng()
+                },
+            }
+            onAddPlace(pos)
+            renderPlaces()
+            confirmBtn.outerHTML = confirmBtn.outerHTML
+        })
     })
     renderPlaces()
     _addCurrLocBtn(map)
@@ -66,11 +72,11 @@ function downloadCsv(elLink) {
     elLink.href = `data:text/csv;charset=utf-8, ${csvContent}`
 }
 
+// From google API docs, with modification
 function _addCurrLocBtn(map) {
-    const locationButton = document.createElement('button');
-    locationButton.innerText = 'Pan to Current Location';
-    locationButton.classList.add('custom-map-control-button');
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    const locationButton = document.createElement('button')
+    locationButton.classList.add('custom-map-control-button')
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton)
     locationButton.addEventListener('click', () => {
         navigator.geolocation.getCurrentPosition(position => {
             const pos = {
@@ -81,7 +87,7 @@ function _addCurrLocBtn(map) {
                 position: pos,
                 map: map,
             })
-            map.setCenter(pos);
+            map.setCenter(pos)
         })
     })
 }

@@ -10,17 +10,3 @@
 .colors-txt-container {
     text-align: center;
 }
-
-.modal {
-    position: absolute;
-    top: 150%;
-    height: 25%;
-    width: 25%;
-    transition: top 0.5s;
-}
-
-.modal.open {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}

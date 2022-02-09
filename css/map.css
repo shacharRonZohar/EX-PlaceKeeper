@@ -4,6 +4,7 @@
 
 body {
     overflow: hidden;
+    flex-direction: column;
 }
 
 .map {
@@ -55,9 +56,35 @@ body {
     font: 400 18px Roboto, Arial, sans-serif;
     overflow: hidden;
     height: 40px;
+    width: 40px;
+    background-image: url(../assets/my-location.jpg);
+    background-size: contain;
     cursor: pointer;
 }
 
 .custom-map-control-button:hover {
-    background: #ebebeb;
+    background-color: #5f5b5b;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 150%;
+    height: 50%;
+    width: 50%;
+    transition: top 0.5s;
+    background-color: gray;
+}
+
+.modal.open {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons {
+    display: flex;
 }

@@ -18,9 +18,16 @@
         </div>
         <a class="settings " href="user-settings.html ">Settings</a>
     </nav>
-    <a href="#" onclick="downloadCsv(this)" download="exported-data.csv">Export Places</a>
-    <button onclick="onShowPlaces()">Show Places</button>
+    <div class="buttons">
+        <a href="#" onclick="downloadCsv(this)" download="exported-data.csv">Export Places</a>
+        <a href="#" onclick="onShowPlaces()">Show Places</a>
+    </div>
     <section class="map"></section>
+    <div class="modal">
+        <label for="new-place-name">Enter The place's name:</label>
+        <input type="text" id="new-place-name" name="new-place-name" required />
+        <button class="confirm-name">Confirm</button>
+    </div>
     <footer class="user-places"></footer>
     <script src="js/services/utilService.js"></script>
     <script src="js/services/storageService.js"></script>
