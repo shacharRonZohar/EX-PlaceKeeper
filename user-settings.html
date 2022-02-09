@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/user-settings.css'>
+    <title>user-settings</title>
+</head>
+
+<body onload="onInit()">
+    <nav>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="map.html">Map</a>
+        </div>
+        <a class="settings" href="user-settings.html">Settings</a>
+    </nav>
+    <!-- <label>Settings</label> -->
+    <form onsubmit="myFunction()">
+        <div class="flex-form">
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your e-mail here" required />
+            </div>
+            <div class="age">
+                <label for="age">Age:</label>
+                <input type="range" id="age" name="age" min="18" max="120" value="21" onchange="showAge(this.value);" />
+                <span id="sAge">21</span>
+            </div>
+            <div class="colors-txt-container">
+                <span class="colors-txt">Colors -</span>
+            </div>
+            <div class="bg-color">
+                <label for="bg-color">Set Background Color:</label>
+                <input type="color" id="bg-color" name="bg-color" />
+            </div>
+            <div class="txt-color">
+                <label for="txt-color">Set Text Color:</label>
+                <input type="color" id="txt-color" name="txt-color" />
+            </div>
+            <div class="birth-date">
+                <label for="birth-date">Birth Date:</label>
+                <input type="date" id="birth-date" name="birth-date" />
+            </div>
+            <div class="birth-time">
+                <label for="birth-time">Birth Time:</label>
+                <input type="time" id="birth-date" name="birth-date" />
+            </div>
+            <input type="submit" onsubmit="onSubmitForm()" value="Set" />
+            <!-- <button class="set">Set</button> -->
+        </div>
+    </form>
+    <script src="js/services/utilService.js"></script>
+    <script src="js/services/storageService.js"></script>
+    <script src="js/services/userService.js"></script>
+    <script src="js/placeKeeperController.js"></script>
+</body>
+
+</html>
