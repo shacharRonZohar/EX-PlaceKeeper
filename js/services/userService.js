@@ -1,17 +1,21 @@
 'use strict'
 
-const STORAGE_KEY = 'userData'
+const STORAGE_KEY_USER = 'userData'
 
 var gUser
 
 function loadUser() {
-    gUser = loadFromStorage(STORAGE_KEY)
+    gUser = loadFromStorage(STORAGE_KEY_USER)
+}
+
+function setgUser(userObj) {
+    gUser = userObj
 }
 
 function getUserData() {
     return gUser
 }
 
-function onSaveToStorage(userData) {
-    saveToStorage(STORAGE_KEY, userData)
+function saveUserToStorage() {
+    saveToStorage(STORAGE_KEY_USER, gUser)
 }

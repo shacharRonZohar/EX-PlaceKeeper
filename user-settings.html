@@ -20,9 +20,23 @@
     </nav>
     <!-- <label>Settings</label> -->
     <form onsubmit="onSubmitForm()">
-        <datalist>
-            
+        <datalist id="genders-choice">
+            <option value="Agender"></option>
+            <option value="Androgynus"></option>
+            <option value="Aerogender"></option>
+            <option value="Ambigender"></option>
+            <option value="Bigender"></option>
+            <option value="Demigender"></option>
+            <option value="Demifluid:"></option>
+            <option value="Domgender:"></option>
+            <option value="Gender-fluid"></option>
+            <option value="Men"></option>
+            <option value="Other"></option>
+            <option value="Queer"></option>
+            <option value="Transgender"></option>
+            <option value="Women"></option>
         </datalist>
+
         <div class="flex-form">
             <div class="email">
                 <label for="email">Email:</label>
@@ -34,7 +48,7 @@
                 <span id="sAge">21</span>
             </div>
             <div class="colors-txt-container">
-                <span class="colors-txt">Colors -</span>
+                <span class="colors-txt">Colors - </span>
             </div>
             <div class="bg-color">
                 <label for="bg-color">Set Background Color:</label>
@@ -52,10 +66,17 @@
                 <label for="birth-time">Birth Time:</label>
                 <input type="time" id="birth-time" name="birth-time" required />
             </div>
+            <div class="gender">
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" list="genders-choice" required />
+            </div>
             <input type="submit" value="Set" />
             <!-- <button class="set">Set</button> -->
         </div>
     </form>
+    <div class="modal">
+
+    </div>
     <script src="js/services/utilService.js"></script>
     <script src="js/services/storageService.js"></script>
     <script src="js/services/userService.js"></script>

@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='css/map.css'>
     <link rel='stylesheet' href='css/style.css'>
     <title>Map</title>
 </head>
 
-<body onload="onInit()">
+<body onload="onMainInit()">
     <nav>
         <div>
             <a href=" index.html ">Home</a>
@@ -17,11 +18,17 @@
         </div>
         <a class="settings " href="user-settings.html ">Settings</a>
     </nav>
+    <a href="#" onclick="downloadCsv(this)" download="exported-data.csv">Export Places</a>
+    <button onclick="onShowPlaces()">Show Places</button>
+    <section class="map"></section>
+    <footer class="user-places"></footer>
     <script src="js/services/utilService.js"></script>
     <script src="js/services/storageService.js"></script>
     <script src="js/services/userService.js"></script>
     <script src="js/services/placeService.js"></script>
-    <script src="js/placeKeeperController.js"></script>
+    <script src="js/mainController.js"></script>
+    <script src="js/mapController.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvRVXsESveYKZYmMQ1Twtlxt5ad1VlX2Y&callback=initMap&libraries=&v=weekly" async></script>
 </body>
 
 </html>
