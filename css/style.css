@@ -28,11 +28,6 @@ nav {
 
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
     padding: 20px;
-}
-
-.settings {
-    /* order: 1; */
-    /* justify-self: flex-end; */
 }

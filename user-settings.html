@@ -19,7 +19,7 @@
         <a class="settings" href="user-settings.html">Settings</a>
     </nav>
     <!-- <label>Settings</label> -->
-    <form onsubmit="myFunction()">
+    <form onsubmit="onSubmitForm()">
         <div class="flex-form">
             <div class="email">
                 <label for="email">Email:</label>
@@ -43,13 +43,13 @@
             </div>
             <div class="birth-date">
                 <label for="birth-date">Birth Date:</label>
-                <input type="date" id="birth-date" name="birth-date" />
+                <input type="date" id="birth-date" name="birth-date" required/>
             </div>
             <div class="birth-time">
                 <label for="birth-time">Birth Time:</label>
-                <input type="time" id="birth-date" name="birth-date" />
+                <input type="time" id="birth-time" name="birth-time" required />
             </div>
-            <input type="submit" onsubmit="onSubmitForm()" value="Set" />
+            <input type="submit" value="Set" />
             <!-- <button class="set">Set</button> -->
         </div>
     </form>

@@ -4,6 +4,8 @@ function onInit() {
     window.addEventListener('submit', (ev) => {
         ev.preventDefault()
     })
+    loadUser()
+    _renderUserColors(getUserData())
 }
 
 function onSubmitForm() {
